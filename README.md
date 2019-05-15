@@ -23,7 +23,10 @@ Maximizar :
 Restrições :
 
 Demanda :
+
 Vaso Grande = 4
 Vaso Pequeno = 6
+
 Tempo
+
 1,5*Vaso Grande + 0,83333*Vaso Pequeno = 8
