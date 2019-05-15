@@ -1,0 +1,35 @@
+GLPK 4.65 - SENSITIVITY ANALYSIS REPORT                                                                         Page   1
+
+Problem:    Maximiza
+Objective:  Lucro = 46.00010667 (MAXimum)
+
+   No. Row name     St      Activity         Slack   Lower bound       Activity      Obj coef  Obj value at Limiting
+                                          Marginal   Upper bound          range         range   break point variable
+------ ------------ -- ------------- ------------- -------------  ------------- ------------- ------------- ------------
+     1 Demanda1     BS       2.00001       1.99999          -Inf         .           -8.00000      30.00000 Tempo
+                                            .            4.00000        5.33333       1.00004      48.00019 Demanda2
+
+     2 Demanda2     NU       6.00000        .               -Inf        2.40001       -.55557      44.00005 Demanda1
+                                            .55557       6.00000        9.60004          +Inf      48.00019 V_Grande
+
+     3 Tempo        NU       8.00000        .               -Inf        4.99998      -5.33333      30.00000 V_Grande
+                                           5.33333       8.00000       10.99998          +Inf      62.00000 Demanda1
+
+     4 Lucro        BS      46.00011     -46.00011          -Inf       30.00000      -1.00000        .      Tempo
+                                            .               +Inf       46.00011          +Inf          +Inf
+
+GLPK 4.65 - SENSITIVITY ANALYSIS REPORT                                                                         Page   2
+
+Problem:    Maximiza
+Objective:  Lucro = 46.00010667 (MAXimum)
+
+   No. Column name  St      Activity      Obj coef   Lower bound       Activity      Obj coef  Obj value at Limiting
+                                          Marginal   Upper bound          range         range   break point variable
+------ ------------ -- ------------- ------------- -------------  ------------- ------------- ------------- ------------
+     1 V_Grande     BS       2.00001       8.00000        .                -Inf        .           30.00000 Tempo
+                                            .               +Inf        4.00000       9.00004      48.00019 Demanda2
+
+     2 V_Pequeno    BS       6.00000       5.00000        .             2.40001       4.44443      42.66667 Demanda2
+                                            .               +Inf        6.00000          +Inf          +Inf
+
+End of report
