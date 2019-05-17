@@ -1,0 +1,5 @@
+Variáveis;2;
+Restrições;3;
+FO;8;5;
+Restricoes;1;0;0;1;1.5;0.83333;
+RHS;4;6;8
