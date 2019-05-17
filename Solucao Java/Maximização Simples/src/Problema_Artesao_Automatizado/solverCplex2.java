@@ -1,32 +1,14 @@
-package Problema_do_Artesao;
+package Problema_Artesao_Automatizado;
 
-
-//Imports
 import ilog.concert.IloException;
 import ilog.concert.IloLinearNumExpr;
 import ilog.concert.IloNumVar;
 import ilog.cplex.IloCplex;
 
-public class artesao {
+public class solverCplex2 {
 
 	
-
-	
-public static void main(String[] args) {
-		
-		int nv = 2;
-		int nr = 3;
-		double[] r= {8,5};
-		double[][] res = {{1,0},{0,1},{1.5,0.8333333}};
-		double[] rhs = {4,6,8};
-		
-		solveModel(nv, nr, r, res, rhs);
-		
-		
-		
-		
-	}
-	
+	public double fo;
 	
 	/*Declarando 
 	 * n número de variáveis 2
@@ -41,7 +23,17 @@ public static void main(String[] args) {
 	 * */
 	public static void solveModel(int nv, int nr, double[] r, double[][] res, double[] rhs) {
 		
+		///*
+		String arq = "Resposta.txt";
 		
+		String texto = "Resposta:  \r\n";
+		
+		if(LerArquivo.Write(arq,texto)) {
+			System.out.println("Arquivo Salvo");
+		}else {
+			System.out.println("Erro");
+		}
+		//*/
 		try {
 			//Iniciando o Modelo
 			IloCplex model = new IloCplex();				
@@ -78,7 +70,8 @@ public static void main(String[] args) {
 			boolean isSolved = model.solve();
 			if(isSolved) {
 				double objValue = model.getObjValue();
-				System.out.println("Valor objetivo: "+ objValue);
+							System.out.println("Valor objetivo: "+ objValue);
+							LerArquivo.Write(arq,String.valueOf(objValue));
 				for (int i = 0; i < nv; i++) {
 					System.out.println("x["+ (i+1) + "] = " + model.getValue(x[i]));
 				}
@@ -98,6 +91,10 @@ public static void main(String[] args) {
 	
 	
 	
-	
-	
-}
+
+
+
+	}
+
+
+
